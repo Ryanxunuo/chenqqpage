@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>2026年团建执行手册 · 你划我猜版</title>
+<style>
+:root{
+  --ink:#1b2433;
+  --ink-2:#3d4658;
+  --muted:#727a89;
+  --paper:#f3efe6;
+  --paper-2:#fffdf8;
+  --paper-3:#faf6ee;
+  --line:#e2dacb;
+  --line-strong:#d3c7b3;
+  --red:#b94a3d;
+  --red-soft:#f8e7e2;
+  --green:#2f725e;
+  --green-soft:#e4f0ea;
+  --blue:#315f86;
+  --blue-soft:#e6eef6;
+  --purple:#6b4c82;
+  --purple-soft:#efe7f5;
+  --gold:#b3894a;
+  --gold-soft:#fbf0db;
+  --teal:#2f7f7a;
+  --shadow:0 20px 50px rgba(27,36,51,.06);
+  --shadow-sm:0 8px 24px rgba(27,36,51,.05);
+  --radius:22px;
+  --radius-sm:14px;
+  --serif:"Source Han Serif SC","Noto Serif SC","Songti SC","STSong","SimSun",serif;
+  --sans:"PingFang SC","Microsoft YaHei","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 8% 4%,rgba(185,74,61,.06),transparent 24%),
+    radial-gradient(circle at 92% 10%,rgba(47,114,94,.06),transparent 22%),
+    radial-gradient(circle at 50% 100%,rgba(49,95,134,.05),transparent 30%),
+    var(--paper);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.78;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+::selection{background:#efd9a7;color:var(--ink)}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+svg{display:block;max-width:100%}
+.progress-bar{
+  position:fixed;left:0;top:0;height:3px;width:0;z-index:300;
+  background:linear-gradient(90deg,var(--red),var(--gold),var(--green),var(--blue),var(--purple));
+  transition:width .08s linear;
+}
+.site-header{
+  position:sticky;top:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;gap:22px;
+  padding:12px 32px;
+  background:rgba(243,239,230,.9);
+  backdrop-filter:blur(18px) saturate(1.1);
+  border-bottom:1px solid rgba(226,218,203,.9);
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+.brand-mark{
+  width:34px;height:34px;border-radius:50%;flex:0 0 auto;
+  background:conic-gradient(from 45deg,var(--red),var(--gold),var(--green),var(--blue),var(--purple),var(--red));
+  box-shadow:inset 0 0 0 6px var(--paper);
+}
+.brand small{display:block;font-size:10px;letter-spacing:.18em;color:var(--muted);font-weight:500;margin-top:-2px}
+.nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;max-width:760px}
+.nav::-webkit-scrollbar{display:none}
+.nav a{
+  padding:8px 11px;border-radius:999px;font-size:13px;color:var(--muted);
+  white-space:nowrap;transition:background .2s,color .2s,box-shadow .2s;
+}
+.nav a:hover,.nav a.active{background:#fff;color:var(--ink);box-shadow:0 4px 14px rgba(27,36,51,.07)}
+.print-btn{
+  display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;
+  padding:9px 14px;border:1px solid var(--line);border-radius:999px;
+  background:var(--paper-2);color:var(--ink-2);font-size:13px;cursor:pointer;
+  transition:background .2s,transform .2s,box-shadow .2s;
+}
+.print-btn:hover{background:#fff;transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+.hero{
+  max-width:1240px;margin:0 auto;padding:70px 32px 56px;
+  display:grid;grid-template-columns:minmax(0,1.18fr) minmax(320px,.82fr);
+  gap:54px;align-items:center;position:relative;
+}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.22em;color:var(--gold);font-weight:700}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
+h1{
+  font-family:var(--serif);font-size:clamp(44px,6vw,76px);line-height:1.08;
+  letter-spacing:-.03em;margin:18px 0 20px;font-weight:700;
+}
+h1 em{font-style:normal;color:var(--red)}
+.hero-sub{font-size:17px;color:var(--ink-2);max-width:660px;line-height:1.95;margin:0}
+.hero-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.chip{
+  display:inline-flex;align-items:center;gap:7px;padding:7px 12px;
+  border:1px solid var(--line);border-radius:999px;background:rgba(255,253,248,.72);
+  font-size:13px;color:var(--ink-2);
+}
+.chip b{color:var(--ink);font-weight:700}
+.chip .dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 19px;border-radius:999px;border:1px solid transparent;
+  font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;
+}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:0 10px 24px rgba(27,36,51,.14)}
+.btn-primary:hover{background:#28344a;transform:translateY(-1px)}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--ink-2)}
+.btn-ghost:hover{background:#fff;transform:translateY(-1px)}
+.hero-art{position:relative;min-height:420px;display:grid;place-items:center}
+.hero-art::before{
+  content:"";position:absolute;width:min(100%,430px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 50% 50%,rgba(255,253,248,.95),rgba(255,253,248,0) 68%);
+}
+.hero-art svg{width:min(100%,430px);height:auto;position:relative;filter:drop-shadow(0 26px 44px rgba(27,36,51,.08))}
+.hero-vertical{
+  position:absolute;right:-8px;top:50%;transform:translateY(-50%);
+  writing-mode:vertical-rl;letter-spacing:.34em;font-family:var(--serif);
+  font-size:13px;color:var(--muted);opacity:.7;
+}
+.section{max-width:1240px;margin:0 auto;padding:56px 32px}
+.section + .section{border-top:1px solid rgba(226,218,203,.72)}
+.section-head{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.56fr);
+  gap:32px;align-items:end;margin-bottom:34px;
+}
+.section-no{font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:700}
+h2{
+  font-family:var(--serif);font-size:clamp(30px,3.2vw,42px);line-height:1.25;
+  margin:8px 0 0;letter-spacing:-.015em;
+}
+.section-desc{color:var(--muted);font-size:14px;line-height:1.9;margin:0}
+.card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.card-pad{padding:28px}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.stack{display:grid;gap:18px}
+.stack-sm{display:grid;gap:10px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-top:22px}
+.stat{padding:23px;position:relative;overflow:hidden}
+.stat .num{font-family:var(--serif);font-size:46px;line-height:1;font-weight:700}
+.stat .unit{font-size:14px;color:var(--muted);margin-left:4px}
+.stat .label{font-size:13px;color:var(--muted);margin-top:9px}
+.stat::after{
+  content:"";position:absolute;right:-26px;bottom:-34px;width:96px;height:96px;
+  border-radius:50%;border:1px solid rgba(179,137,74,.18);
+}
+.callout{
+  display:grid;grid-template-columns:42px 1fr;gap:15px;padding:18px 21px;
+  border-radius:18px;background:#fff8e8;border:1px solid #f0dfb8;
+}
+.callout.warn{background:#fdf0ec;border-color:#f1cfc5}
+.callout.info{background:#eef5f2;border-color:#cfe3db}
+.callout-icon{
+  width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  background:#fff;font-weight:800;color:var(--gold);font-size:16px;
+}
+.callout.warn .callout-icon{color:var(--red)}
+.callout.info .callout-icon{color:var(--green)}
+.callout h4{margin:0 0 4px;font-size:15px}
+.callout p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.85}
+.callout p + p{margin-top:6px}
+.team-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.team-card{
+  --team:var(--red);--soft:var(--red-soft);
+  position:relative;overflow:hidden;padding:23px;border-top:4px solid var(--team);
+  background:linear-gradient(180deg,var(--soft),var(--paper-2) 44%);
+}
+.team-card.green{--team:var(--green);--soft:var(--green-soft)}
+.team-card.blue{--team:var(--blue);--soft:var(--blue-soft)}
+.team-card.purple{--team:var(--purple);--soft:var(--purple-soft)}
+.team-card::after{
+  content:attr(data-glyph);position:absolute;right:6px;bottom:-32px;
+  font-family:var(--serif);font-size:132px;line-height:1;color:var(--team);
+  opacity:.07;pointer-events:none;
+}
+.team-color{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.18em;color:var(--muted);font-weight:700}
+.team-color::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--team)}
+.team-name{font-family:var(--serif);font-size:22px;font-weight:700;margin:8px 0 16px;position:relative;z-index:1}
+.team-row{
+  display:flex;justify-content:space-between;gap:12px;padding:9px 0;
+  border-top:1px dashed rgba(27,36,51,.12);font-size:13px;position:relative;z-index:1;
+}
+.team-row span:first-child{color:var(--muted);flex:0 0 auto}
+.team-row span:last-child{font-weight:600;text-align:right}
+.team-note{
+  margin-top:14px;padding:10px 12px;border:1px dashed rgba(27,36,51,.16);
+  border-radius:12px;font-size:12px;color:var(--muted);position:relative;z-index:1;
+}
+.timeline{list-style:none;padding:0;margin:0;position:relative}
+.timeline::before{
+  content:"";position:absolute;left:102px;top:14px;bottom:14px;width:1px;
+  background:linear-gradient(var(--line),var(--line-strong),var(--line));
+}
+.timeline li{display:grid;grid-template-columns:84px 1fr;gap:36px;position:relative;padding:0 0 13px}
+.timeline li::before{
+  content:"";position:absolute;left:96px;top:21px;width:13px;height:13px;border-radius:50%;
+  background:var(--paper);border:3px solid #c9bda9;z-index:1;
+}
+.timeline li.key::before{border-color:var(--gold);background:var(--gold)}
+.timeline time{
+  font-size:14px;font-weight:700;color:var(--ink-2);padding-top:14px;text-align:right;
+  font-variant-numeric:tabular-nums;letter-spacing:.02em;
+}
+.timeline-card{padding:15px 19px;border-radius:16px;background:var(--paper-2);border:1px solid var(--line)}
+.timeline-card h4{margin:0;font-size:16px}
+.timeline-card .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:5px;font-size:12px;color:var(--muted)}
+.timeline-card p{margin:7px 0 0;font-size:13px;color:var(--muted);line-height:1.7}
+.tag{
+  display:inline-block;padding:2px 7px;border-radius:6px;background:var(--gold-soft);
+  color:#8a6417;font-size:11px;font-weight:700;
+}
+.tag.red{background:var(--red-soft);color:#8c3c2e}
+.tag.green{background:var(--green-soft);color:#245c4b}
+.tag.blue{background:var(--blue-soft);color:#274e70}
+.script{display:grid;gap:17px}
+.script-block{overflow:hidden}
+.script-head{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:16px 23px;border-bottom:1px solid var(--line);background:#fbf7ef;
+}
+.script-head h3{margin:0;font-size:18px;font-family:var(--serif)}
+.script-head .time{font-size:12px;color:var(--muted);letter-spacing:.08em;white-space:nowrap}
+.script-body{padding:19px 23px 23px;display:grid;gap:13px}
+.line{display:grid;grid-template-columns:84px 1fr;gap:15px;align-items:start}
+.speaker{
+  display:inline-flex;justify-content:center;padding:4px 8px;border-radius:999px;
+  font-size:12px;font-weight:700;background:#eef5f2;color:var(--teal);white-space:nowrap;
+}
+.speaker.fang{background:#eef2f7;color:var(--blue)}
+.speaker.leader{background:var(--gold-soft);color:#946a24}
+.speaker.all{background:#f1ece1;color:var(--muted)}
+.line p{margin:0;font-size:15px;line-height:1.88;color:var(--ink-2)}
+.line p strong{color:var(--ink)}
+.line p em{font-style:normal;background:linear-gradient(transparent 62%,#f6e3b5 62%);padding:0 2px}
+.stage{
+  display:flex;gap:10px;padding:11px 15px;border-radius:12px;background:#f4efe5;
+  border-left:3px solid #c9bda9;font-size:13px;color:var(--muted);
+}
+.stage b{color:var(--ink-2);font-weight:700;white-space:nowrap}
+.todo{
+  display:inline-block;padding:1px 7px;border-radius:6px;background:#fff1c9;
+  color:#8a6417;font-size:12px;font-weight:700;white-space:nowrap;
+}
+.muted{color:var(--muted)}
+.small{font-size:12px;line-height:1.7}
+.game-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}
+.game-card{--accent:var(--red);--soft:var(--red-soft);padding:25px;position:relative;overflow:hidden}
+.game-card.green{--accent:var(--green);--soft:var(--green-soft)}
+.game-card.blue{--accent:var(--blue);--soft:var(--blue-soft)}
+.game-card.purple{--accent:var(--purple);--soft:var(--purple-soft)}
+.game-card::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--accent)}
+.game-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.game-glyph{
+  width:52px;height:52px;border-radius:16px;display:grid;place-items:center;
+  background:var(--soft);color:var(--accent);font-family:var(--serif);
+  font-size:24px;font-weight:700;flex:0 0 auto;
+}
+.game-title h3{margin:0;font-family:var(--serif);font-size:24px}
+.game-title p{margin:4px 0 0;font-size:12px;color:var(--muted);letter-spacing:.08em}
+.meta-chips{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0 17px}
+.meta-chips span{font-size:12px;padding:5px 9px;border-radius:999px;background:#f4efe5;color:var(--ink-2)}
+.game-card ol{margin:0;padding-left:20px;display:grid;gap:7px;font-size:14px;color:var(--ink-2)}
+.game-card ol li::marker{color:var(--accent);font-weight:700}
+.judge{
+  margin-top:17px;padding:13px 15px;border-radius:12px;background:#fdf0ec;
+  border:1px solid #f1cfc5;font-size:13px;color:#7c3d31;line-height:1.8;
+}
+.judge b{color:#8c3c2e}
+.table-wrap{overflow-x:auto;border-radius:18px;border:1px solid var(--line);background:var(--paper-2)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:12px 13px;text-align:left;border-bottom:1px solid #eee7db;vertical-align:top}
+th{background:#f7f2e8;font-size:12px;letter-spacing:.05em;color:var(--muted);font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td strong{color:var(--ink)}
+.table-note{font-size:12px;color:var(--muted);margin-top:9px;line-height:1.7}
+.score-table select{
+  width:100%;min-width:112px;padding:7px 9px;border:1px solid var(--line);
+  border-radius:8px;background:#fff;color:var(--ink-2);font-size:12px;
+}
+.score-table input{
+  width:100%;min-width:96px;padding:7px 9px;border:1px solid var(--line);
+  border-radius:8px;background:#fff;color:var(--ink-2);font-size:12px;
+}
+.score-table input:focus{outline:2px solid #e8d5a8;outline-offset:1px;border-color:var(--gold)}
+.score-table td{vertical-align:middle}
+.score-total{font-family:var(--serif);font-size:20px;font-weight:700}
+.rank-badge{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;
+  background:#f4efe5;font-weight:700;font-size:12px;}
+.rank-badge.first{background:var(--gold-soft);color:#8a6417}
+.score-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+.timer-card{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:21px 25px;background:var(--ink);color:#fff;border-radius:20px;margin-top:19px;
+}
+.timer-card .label{font-size:11px;letter-spacing:.16em;color:rgba(255,255,255,.62);margin-bottom:4px}
+.timer-display{font-family:var(--serif);font-size:46px;font-variant-numeric:tabular-nums;letter-spacing:.04em;line-height:1}
+.timer-actions{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.timer-actions button{
+  padding:8px 11px;border-radius:999px;border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.08);color:#fff;font-size:12px;cursor:pointer;transition:background .2s;
+}
+.timer-actions button:hover{background:rgba(255,255,255,.16)}
+.timer-actions button.primary{background:#fff;color:var(--ink);border-color:#fff;font-weight:700}
+.timer-card.is-done{background:#7c3d31}
+.check-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.check{
+  display:flex;gap:11px;align-items:flex-start;padding:11px 13px;
+  border:1px solid var(--line);border-radius:12px;background:var(--paper-2);
+  font-size:14px;cursor:pointer;transition:background .2s,border-color .2s;
+}
+.check:hover{background:#fff;border-color:#d8cfbf}
+.check input{margin-top:4px;accent-color:var(--green);width:16px;height:16px;flex:0 0 auto}
+.check span{line-height:1.62}
+.check input:checked + span{color:var(--muted);text-decoration:line-through}
+.word-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.word-set{padding:20px}
+.word-set h4{margin:0;font-family:var(--serif);font-size:18px}
+.word-set p{margin:4px 0 0;font-size:12px;color:var(--muted)}
+.words{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.word{padding:5px 9px;border-radius:8px;background:#f4efe5;font-size:13px;color:var(--ink-2)}
+.roster th{text-align:center}
+.roster td{text-align:center;height:34px}
+.kv{display:grid;grid-template-columns:110px 1fr;gap:10px;font-size:13px;padding:9px 0;border-bottom:1px dashed rgba(27,36,51,.12)}
+.kv:last-child{border-bottom:0}
+.kv span:first-child{color:var(--muted)}
+.kv span:last-child{font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--muted);margin-top:12px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.site-footer{
+  max-width:1240px;margin:0 auto;padding:38px 32px 60px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:24px;color:var(--muted);font-size:12px;line-height:1.8;
+}
+.to-top{
+  position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;
+  display:grid;place-items:center;background:var(--ink);color:#fff;border:0;
+  box-shadow:0 10px 24px rgba(27,36,51,.2);cursor:pointer;z-index:90;
+  opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;
+}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:hover{transform:translateY(-2px)}
+@media (max-width:1080px){
+  .hero{grid-template-columns:1fr;gap:22px}
+  .hero-art{min-height:300px}
+  .hero-vertical{display:none}
+  .team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .section-head{grid-template-columns:1fr;gap:12px}
+}
+@media (max-width:760px){
+  body{font-size:15px}
+  .site-header{padding:10px 16px;gap:12px}
+  .brand small{display:none}
+  .nav{max-width:calc(100vw - 190px)}
+  .print-btn{padding:8px 11px;font-size:12px}
+  .hero{padding:40px 18px 32px}
+  .hero-sub{font-size:15px}
+  .section{padding:40px 18px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .team-grid,.game-grid,.grid-2,.grid-3,.word-grid,.check-grid{grid-template-columns:1fr}
+  .timeline::before{left:64px}
+  .timeline li{grid-template-columns:52px 1fr;gap:24px}
+  .timeline li::before{left:58px}
+  .timeline time{font-size:12px;padding-top:16px}
+  .line{grid-template-columns:1fr;gap:6px}
+  .timer-card{flex-direction:column;align-items:flex-start;gap:15px}
+  .timer-actions{justify-content:flex-start}
+  .site-footer{flex-direction:column;padding:28px 18px 48px}
+  h1{font-size:42px}
+}
+@media print{
+  @page{size:A4;margin:11mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.58}
+  .site-header,.progress-bar,.to-top,.no-print,.timer-actions,.score-actions,.print-btn{display:none!important}
+  .hero{display:block;padding:0 0 18px;min-height:auto}
+  .hero-art{display:none}
+  .section{padding:16px 0;break-inside:auto}
+  .section + .section{border-top:0}
+  .card,.team-card,.game-card,.timeline-card,.script-block{box-shadow:none;break-inside:avoid}
+  .page-break{break-before:page}
+  h1{font-size:30pt;margin:8px 0 12px}
+  h2{font-size:20pt}
+  .script-block{page-break-inside:avoid}
+  .table-wrap{overflow:visible;border-color:#ddd}
+  table{font-size:8.6pt}
+  th,td{padding:6px 7px}
+  .word-grid,.team-grid{grid-template-columns:repeat(2,1fr)}
+  .game-grid,.grid-2,.grid-3,.check-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  a{text-decoration:none;color:inherit}
+  .stage{background:#f6f6f6}
+}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="回到顶部">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span>2026 团建执行手册<small>TEAM BUILDING · 你划我猜版</small></span>
+  </a>
+  <nav class="nav" aria-label="页面导航">
+    <a href="#overview">总览</a>
+    <a href="#teams">队伍</a>
+    <a href="#flow">流程</a>
+    <a href="#script">主持稿</a>
+    <a href="#rules">项目规则</a>
+    <a href="#score">计分</a>
+    <a href="#dinner">晚宴</a>
+    <a href="#ops">分工物资</a>
+    <a href="#appendix">附录</a>
+  </nav>
+  <button class="print-btn" type="button" onclick="window.print()">打印 / 导出 PDF</button>
+</header><main id="top">
+
+  <!-- 01 总览 -->
+  <section class="section" id="overview">
+    <div class="section-head">
+      <div>
+        <div class="section-no">01 / OVERVIEW</div>
+        <h2>一页看懂今天怎么跑</h2>
+      </div>
+      <p class="section-desc">整场活动由“破冰热身—四项竞技—统分颁奖—写心愿—总结合影”五段组成。四支队伍全程同场，除同心鼓和你划我猜按顺序上场外，其余项目同时开赛。</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat card">
+        <div class="num">4<span class="unit">支</span></div>
+        <div class="label">红、绿、蓝、紫四队</div>
+      </div>
+      <div class="stat card">
+        <div class="num">4<span class="unit">项</span></div>
+        <div class="label">正式竞技项目</div>
+      </div>
+      <div class="stat card">
+        <div class="num">2<span class="unit">个</span></div>
+        <div class="label">破冰与晚宴互动</div>
+      </div>
+      <div class="stat card">
+        <div class="num">165<span class="unit">分钟</span></div>
+        <div class="label">13:30—16:15 建议时长</div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:20px">
+      <div class="card card-pad">
+        <h3 style="margin:0 0 14px;font-family:var(--serif);font-size:21px">这一版改了什么</h3>
+        <div class="stack-sm">
+          <div class="kv"><span>队伍口径</span><span>全文统一为四支队伍</span></div>
+          <div class="kv"><span>你划我猜</span><span>补齐逐队上场、计时、报分、结束串词</span></div>
+          <div class="kv"><span>比赛判罚</span><span>增加脚落地、抢跑、交接、偷看词卡的统一处理</span></div>
+          <div class="kv"><span>同心鼓时长</span><span>按单鼓四队重排为 30 分钟</span></div>
+          <div class="kv"><span>抽奖闭环</span><span>明确心愿卡即抽奖券、每人限中一次</span></div>
+          <div class="kv"><span>现场执行</span><span>补充分工、物资、计分表和 90 秒计时器</span></div>
+        </div>
+      </div>
+
+      <div class="stack">
+        <div class="callout warn">
+          <div class="callout-icon">!</div>
+          <div>
+            <h4>出发前必须先定的三件事</h4>
+            <p><strong>每队实际人数</strong>：原稿两个接力项目都要求 12 人，若某队不足 12 人，需在赛前统一改为“每队 10 人”或“按最少人数上场”。</p>
+            <p><strong>奖品清单</strong>：原稿二等奖、三等奖都写“刷烤锅”，请确认是“涮烤锅”还是不同奖品，并核对 48 份游戏奖品的预算。</p>
+            <p><strong>抽奖载体</strong>：建议直接用心愿卡抽奖，不再另设抽奖箱，避免“两套抽奖”混淆。</p>
+          </div>
+        </div>
+        <div class="callout info">
+          <div class="callout-icon">i</div>
+          <div>
+            <h4>主持节奏原则</h4>
+            <p>每个项目固定“讲规则—练一次—正式计时—报成绩—一句收束”。主持人只负责串场和气氛，计时、判罚、计分交给裁判组，避免主持人一边讲话一边看表。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 队伍 -->
+  <section class="section" id="teams">
+    <div class="section-head">
+      <div>
+        <div class="section-no">02 / TEAMS</div>
+        <h2>四支队伍与集合方式</h2>
+      </div>
+      <p class="section-desc">签到后按手环颜色归队。队长负责清点人数、确认上场名单、领取道具；队员名单建议提前发群，现场只做点名，不逐人念名单。</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card card" data-glyph="赤">
+        <div class="team-color">TEAM RED</div>
+        <div class="team-name">赤焰之红队</div>
+        <div class="team-row"><span>队长</span><span>温总</span></div>
+        <div class="team-row"><span>队员</span><span class="todo">名单待补</span></div>
+        <div class="team-row"><span>手环</span><span>红色</span></div>
+        <div class="team-note">集合区：面向舞台左侧第一块地贴</div>
+      </div>
+      <div class="team-card green card" data-glyph="雷">
+        <div class="team-color">TEAM GREEN</div>
+        <div class="team-name">雷霆之绿队</div>
+        <div class="team-row"><span>队长</span><span>刘骅总</span></div>
+        <div class="team-row"><span>队员</span><span class="todo">名单待补</span></div>
+        <div class="team-row"><span>手环</span><span>绿色</span></div>
+        <div class="team-note">集合区：面向舞台左侧第二块地贴</div>
+      </div>
+      <div class="team-card blue card" data-glyph="沧">
+        <div class="team-color">TEAM BLUE</div>
+        <div class="team-name">沧溟之蓝队</div>
+        <div class="team-row"><span>队长</span><span>陈保才总</span></div>
+        <div class="team-row"><span>队员</span><span class="todo">名单待补</span></div>
+        <div class="team-row"><span>手环</span><span>蓝色</span></div>
+        <div class="team-note">集合区：面向舞台右侧第一块地贴</div>
+      </div>
+      <div class="team-card purple card" data-glyph="绛">
+        <div class="team-color">TEAM PURPLE</div>
+        <div class="team-name">绛霄之紫队</div>
+        <div class="team-row"><span>队长</span><span class="todo">待确认</span></div>
+        <div class="team-row"><span>队员</span><span class="todo">名单待补</span></div>
+        <div class="team-row"><span>手环</span><span>紫色</span></div>
+        <div class="team-note">集合区：面向舞台右侧第二块地贴</div>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:18px">
+      <div class="card card-pad">
+        <h4 style="margin:0 0 6px;font-size:15px">集合与发环</h4>
+        <p class="small muted" style="margin:0">郭清、张金按队伍颜色发放手环，各队队长协助清点。发环时同步确认：是否有队员未到、是否有临时加入人员。</p>
+      </div>
+      <div class="card card-pad">
+        <h4 style="margin:0 0 6px;font-size:15px">上场人数</h4>
+        <p class="small muted" style="margin:0">建议每队固定 12 人参赛；同心鼓 11 人、你划我猜 2 人比划。队长在赛前把各项目上场名单报给计分员。</p>
+      </div>
+      <div class="card card-pad">
+        <h4 style="margin:0 0 6px;font-size:15px">队伍口号</h4>
+        <p class="small muted" style="margin:0">每队准备一句 8 字以内口号，开场亮相时齐喊一次。口号不占比赛时间，但能快速把队伍状态拉起来。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 流程 -->
+  <section class="section" id="flow">
+    <div class="section-head">
+      <div>
+        <div class="section-no">03 / RUN OF SHOW</div>
+        <h2>现场时间流程</h2>
+      </div>
+      <p class="section-desc">按 13:30 开始、16:15 结束排布，含换场与统分。若晚宴 17:30 开始，16:15 后留自由活动；若需提前开餐，优先压缩同心鼓练习时间。</p>
+    </div>
+
+    <div class="card card-pad">
+      <ol class="timeline">
+        <li class="key">
+          <time>13:30</time>
+          <div class="timeline-card">
+            <h4>领导讲话 <span class="tag">5 分钟</span></h4>
+            <div class="meta"><span>陈总</span><span>引出主持人陈青青</span></div>
+            <p>讲话结束后，陈青青接场，感谢讲话并请出方锐。</p>
+          </div>
+        </li>
+        <li>
+          <time>13:35</time>
+          <div class="timeline-card">
+            <h4>开场白与活动说明 <span class="tag">8 分钟</span></h4>
+            <div class="meta"><span>陈青青 / 方锐</span><span>介绍四队、四项竞技、晚宴抽奖</span></div>
+            <p>只讲“怎么玩、有什么奖、要注意什么”，不逐条念长规则。</p>
+          </div>
+        </li>
+        <li>
+          <time>13:43</time>
+          <div class="timeline-card">
+            <h4>按手环归队、队伍亮相 <span class="tag">5 分钟</span></h4>
+            <div class="meta"><span>郭清 / 张金发环</span><span>四队队长清点</span></div>
+            <p>每队喊一次口号，确认队长和上场名单。绛霄之紫队队长需在此时明确。</p>
+          </div>
+        </li>
+        <li>
+          <time>13:48</time>
+          <div class="timeline-card">
+            <h4>破冰：捉泥鳅 <span class="tag green">10 分钟</span></h4>
+            <div class="meta"><span>全员围圈</span><span>音乐互动</span></div>
+            <p>唱到“捉泥鳅”时原地向后转。提醒先松手再转身，避免推挤。</p>
+          </div>
+        </li>
+        <li>
+          <time>13:58</time>
+          <div class="timeline-card">
+            <h4>热身操 <span class="tag green">7 分钟</span></h4>
+            <div class="meta"><span>领操员</span><span>肩颈、腰背、膝盖、脚踝</span></div>
+            <p>保持一臂距离，重点活动脚踝和膝盖，为接力项目做准备。</p>
+          </div>
+        </li>
+        <li class="key">
+          <time>14:05</time>
+          <div class="timeline-card">
+            <h4>项目一：摸石头过河 <span class="tag red">20 分钟</span></h4>
+            <div class="meta"><span>四队同时</span><span>每队 12 人</span><span>3 块泡沫垫</span></div>
+            <p>3 分钟适应 + 正式计时。每条赛道 1 名裁判，脚落地每次加 5 秒。</p>
+          </div>
+        </li>
+        <li class="key">
+          <time>14:25</time>
+          <div class="timeline-card">
+            <h4>项目二：同心鼓 <span class="tag red">30 分钟</span></h4>
+            <div class="meta"><span>单鼓四队轮上</span><span>每队 11 人</span><span>练习 2 分钟 + 比赛 2 分钟</span></div>
+            <p>抽签定顺序。一队比赛时，下一队在侧后方候场，避免影响拉绳。</p>
+          </div>
+        </li>
+        <li class="key">
+          <time>14:55</time>
+          <div class="timeline-card">
+            <h4>项目三：夹纸运杯 <span class="tag red">18 分钟</span></h4>
+            <div class="meta"><span>四队同时</span><span>每队 12 人</span><span>A4 纸 + 纸杯</span></div>
+            <p>纸杯不装水，禁止奔跑。纸或杯掉落，原地整理好后继续，计时不停。</p>
+          </div>
+        </li>
+        <li class="key">
+          <time>15:13</time>
+          <div class="timeline-card">
+            <h4>项目四：你划我猜 <span class="tag red">25 分钟</span></h4>
+            <div class="meta"><span>四队轮上</span><span>每队 2 人比划</span><span>每队 90 秒</span></div>
+            <p>抽签定套题与顺序。每队结束立即报分，四队完成后统一排名。</p>
+          </div>
+        </li>
+        <li>
+          <time>15:38</time>
+          <div class="timeline-card">
+            <h4>统分与四项颁奖 <span class="tag">15 分钟</span></h4>
+            <div class="meta"><span>计分员汇总</span><span>四项分别颁奖</span></div>
+            <p>按“摸石头过河—同心鼓—夹纸运杯—你划我猜”顺序颁奖，每项控制在 3 分钟内。</p>
+          </div>
+        </li>
+        <li>
+          <time>15:53</time>
+          <div class="timeline-card">
+            <h4>写心愿卡 <span class="tag">10 分钟</span></h4>
+            <div class="meta"><span>全员</span><span>署名后投入抽奖箱</span></div>
+            <p>强调“心愿卡就是晚宴抽奖券”，未提交视为放弃。</p>
+          </div>
+        </li>
+        <li class="key">
+          <time>16:03</time>
+          <div class="timeline-card">
+            <h4>董事长总结讲话 <span class="tag">8 分钟</span></h4>
+            <div class="meta"><span>董事长</span><span>随后合影</span></div>
+            <p>讲话后由主持人收束，感谢领导与全员，宣布竞技部分结束。</p>
+          </div>
+        </li>
+        <li>
+          <time>16:11</time>
+          <div class="timeline-card">
+            <h4>全员合影、转场 <span class="tag">4 分钟</span></h4>
+            <div class="meta"><span>摄影</span><span>四队站位</span></div>
+            <p>按红、绿、蓝、紫从左到右站位，领导居中。合影后提示晚宴时间与地点。</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="callout info" style="margin-top:16px">
+      <div class="callout-icon">i</div>
+      <div>
+        <h4>时间弹性</h4>
+        <p>同心鼓是最容易超时的环节。若落后 5 分钟以上，将每队练习压到 1 分钟、比赛保持 2 分钟；若仍超时，直接取消练习，只保留一次试颠。颁奖环节可合并为“四项依次上台”，不再逐项播放背景音乐。</p>
+      </div>
+    </div>
+  </section>  <!-- 04 主持稿 -->
+  <section class="section" id="script">
+    <div class="section-head">
+      <div>
+        <div class="section-no">04 / HOST SCRIPT</div>
+        <h2>主持串词</h2>
+      </div>
+      <p class="section-desc">陈青青负责流程推进与规则说明，方锐负责气氛、规则补充与比赛播报。灰色条为动作提示，不念出来；黄色“待补”需在活动前替换。</p>
+    </div>
+
+    <div class="script">
+
+      <article class="script-block card">
+        <div class="script-head"><h3>开场 · 13:30—13:48</h3><span class="time">18 分钟</span></div>
+        <div class="script-body">
+          <div class="stage"><b>动作</b>陈总讲话结束后，陈青青从侧台上场；方锐在舞台另一侧候场。</div>
+          <div class="line"><span class="speaker">陈青青</span><p>感谢陈总热情洋溢的讲话，为我们本次团建凝聚了共识，也振奋了团队士气。大好时光，欢聚相伴，接下来，让我们掌声有请方锐，和我一同开启今天的团建！</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>各位领导、各位同事，大家好！忙碌的工作告一段落，今天我们欢聚一堂。今天的初心很简单：拉近团队距离，激发团队活力。接下来，让我们暂时放下工作指标，珍惜和伙伴相处的机会，用协作和欢笑，共同定格属于我们的美好瞬间！</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>为了公平竞技，也为了让大家有更多协作的机会，我们已经把分组名单发到团建群里。赤焰之红队，队长温总；雷霆之绿队，队长刘骅总；沧溟之蓝队，队长陈保才总；绛霄之紫队，队长<span class="todo">待确认</span>。请各队队长举手示意，带领队员到对应颜色地贴集合。</p></div>
+          <div class="stage"><b>动作</b>郭清、张金按红、绿、蓝、紫发放手环；队长清点人数，向计分员报“实到人数”。</div>
+          <div class="line"><span class="speaker fang">方锐</span><p>我给大家介绍一下今天的安排。首先是四个正式竞技项目：摸石头过河、同心鼓、夹纸运杯、你划我猜。每个项目的获胜队伍，每名上场队员都会获得一份奖品。其次是晚宴抽奖：一等奖一名，二等奖两名，三等奖三名。今天不追求人人拿奖，但希望队队都有收获、人人都有参与感。</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>在正式开赛之前，我们先做一个全员破冰小游戏——捉泥鳅。这个不算正式比赛，就是让大家先热热身。请大家手拉手围成一个大圈，随着音乐节奏走动。音乐里唱到“捉泥鳅”三个字，大家就立刻原地向后转，转完以后重新拉好手，继续跟着节奏走。注意：先松手、再转身，保持间距，慢一点，别推别挤。准备好了吗？音乐起——</p></div>
+          <div class="stage"><b>音乐</b>《捉泥鳅》副歌循环 3—4 次；每次“捉泥鳅”前，音控稍微推高音量作为提示。</div>
+          <div class="line"><span class="speaker fang">方锐</span><p>好，音乐先停，大家原地停步，手放下来。请按照手环颜色归队。接下来我们趁热打铁，做一个简单的热身操，把肩颈、腰背、膝盖和脚踝都活动开，后面玩游戏更安全、更放得开。来，大家前后左右拉开一点，保持一臂距离，别挤在一起。跟着音乐节奏，看领操员动作，我们开始——</p></div>
+          <div class="stage"><b>动作</b>领操员上台，带 4 个八拍：肩颈—腰背—膝盖—脚踝。每节之间提醒“慢一点、别弹震”。</div>
+        </div>
+      </article>
+
+      <article class="script-block card">
+        <div class="script-head"><h3>项目一 · 摸石头过河</h3><span class="time">14:05—14:25</span></div>
+        <div class="script-body">
+          <div class="line"><span class="speaker">陈青青</span><p>热身结束，大家现在的状态已经拉满。接下来，我们正式进入今天的团队竞技时间。四个趣味项目，四轮团队比拼。请大家听清规则、遵守秩序，记住：安全放第一位，友谊放在心，成绩放最后。好，话不多说，第一个挑战马上开始——摸石头过河！</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>规则请大家听清楚。每队派出 12 名队员，赛道两端各站 6 人，每队 3 块泡沫垫。这 3 块垫子，就是你们过河唯一的落脚点。听到“开始”后，起点第一名队员用 3 块垫子交替向前挪，脚只能踩在垫子上，不能落地。到达对面后，把 3 块垫子交给对面第一名队员；对面队员接到后，再从那边走回来。两边轮流接力，直到全队 12 人全部完成。用时最短的队伍获胜。</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>再强调四条：第一，脚不能落地；第二，垫子必须一块一块往前挪，不能抱着垫子跑；第三，交接时 3 块垫子必须交到下一名队员手里，不能扔；第四，每队有 2 分钟适应时间，适应结束后正式计时。脚落地一次加 5 秒，抢跑一次加 5 秒，由赛道裁判举旗示意。</p></div>
+          <div class="stage"><b>动作</b>四队同时就位；每队 1 名裁判、1 名计时；总裁判吹哨开始。适应时间 2 分钟，正式比赛开始前 10 秒倒数。</div>
+          <div class="line"><span class="speaker">陈青青</span><p>各队准备——预备——开始！</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>加油！看谁能在垫子上走得又快又稳。注意脚下，不要抢，交接一定交到手里！</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>石头过河，步步为营。古人说“千里之行，始于足下”，每一步都要踩稳，才能走得更远。</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>摸石头过河，讲究的是稳中求进、脚踏实地。它象征着我们在工作和生活中，面对未知的挑战，要一步一个脚印，稳扎稳打，才能顺利到达彼岸。</p></div>
+          <div class="stage"><b>动作</b>最后一名队员过线后停表；计分员记录“队名 + 用时 + 加罚秒数”，裁判长签字。</div>
+          <div class="line"><span class="speaker">陈青青</span><p>恭喜<span class="todo">××</span>队率先完成，也把掌声送给四支全力以赴的队伍。成绩有先后，参与就是收获。接下来，考验团队默契和节奏感的时候到了——同心鼓！</p></div>
+        </div>
+      </article>
+
+      <article class="script-block card">
+        <div class="script-head"><h3>项目二 · 同心鼓</h3><span class="time">14:25—14:55</span></div>
+        <div class="script-body">
+          <div class="line"><span class="speaker fang">方锐</span><p>同心鼓，也叫击鼓颠球。每队选派 11 名队员：10 名队员每人拉住一根绳子，把鼓面拉平；另有 1 名队员专门负责放球。听到“开始”后，放球的人把球放到鼓面上，拉绳的 10 人合力用鼓面颠球。比赛时间 2 分钟，累计颠球次数最多的队伍获胜。</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>注意三点：第一，绳子必须拉紧，鼓面尽量保持水平；第二，只能用鼓面颠球，不能用手或身体其他部位碰球；第三，球落地后可以捡起来继续，但落地期间不计次数。每队上场前有 2 分钟适应时间，适应结束后立即开始正式比赛。</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>因为现场只有一面鼓，四支队伍需要按顺序上场。现在请四位队长到台前抽签，1 到 4 号，1 号先上，4 号最后上。顺序确定后，请各队按顺序到候场区准备。</p></div>
+          <div class="stage"><b>动作</b>准备 4 张签（1—4）；队长抽签后向全场展示。计分员记录顺序。候场队站在鼓区侧后方 3 米外。</div>
+          <div class="line"><span class="speaker">陈青青</span><p>顺序出来了：第一队<span class="todo">××</span>队，第二队<span class="todo">××</span>队，第三队<span class="todo">××</span>队，第四队<span class="todo">××</span>队。请第一队上场，先适应 2 分钟。</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>第一队准备——适应时间开始！……时间到，正式比赛，预备——开始！</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>稳住，绳子拉平，大家一起数！一、二、三……</p></div>
+          <div class="stage"><b>动作</b>每队比赛结束立即报“有效颠球数”；裁判长确认后，计分员登记。下一队直接进入适应，不再重复长规则。</div>
+          <div class="line"><span class="speaker fang">方锐</span><p>鼓，自古就是振奋人心、凝聚士气的乐器。《诗经》里说“击鼓其镗，踊跃用兵”，鼓声一响，人心就齐了。同心鼓，贵在“同心”二字。一根根绳子连着鼓，也连着每一位队员的心。心往一处想，劲往一处使，鼓面才能稳，球才能颠得久。</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>四队全部完成。同心鼓项目，<span class="todo">××</span>队以<span class="todo">××</span>次获得第一。鼓声同心，其利断金，愿各队都能同心协力、一鼓作气！接下来，考验平衡和耐心的时候到了——夹纸运杯！</p></div>
+        </div>
+      </article>
+
+      <article class="script-block card">
+        <div class="script-head"><h3>项目三 · 夹纸运杯</h3><span class="time">14:55—15:13</span></div>
+        <div class="script-body">
+          <div class="line"><span class="speaker">陈青青</span><p>我来说一下规则。四支队伍分别选派 12 名队员，赛道两端各站 6 人。每队第一名队员用膝盖夹住一张 A4 纸，头顶放一个纸杯。听到“开始”后从起点出发，走到对面，把纸和杯子交给对面第一名队员；对面队员接好后，再夹好、顶好，走回起点。如此往返，直到全队 12 人全部完成。用时最短的队伍获胜。</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>注意：第一，只能用膝盖夹住纸，不能用手扶杯子；第二，纸或杯子掉了，要停下来捡起来，重新夹好、放好再继续，计时不停；第三，不能跑，只能快走，前后队员保持距离。抢跑一次加 5 秒，纸杯掉落不额外加时，但必须原地整理好。</p></div>
+          <div class="stage"><b>动作</b>纸杯不装水；每队 1 名裁判；地面标出起点线、折返线。A4 纸备用若干，湿了或破了立即更换。</div>
+          <div class="line"><span class="speaker fang">方锐</span><p>各队准备，预备——开始！</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>加油！稳住！膝盖夹紧，头别低，眼睛看前方！</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>现在领先的是<span class="todo">××</span>队，后面的队伍追得很紧。不要急，掉了就停下来整理，稳比快更重要！</p></div>
+          <div class="stage"><b>动作</b>最后一人过线停表；裁判确认无违规后登记成绩。</div>
+          <div class="line"><span class="speaker">陈青青</span><p>恭喜<span class="todo">××</span>队获得夹纸运杯第一名。比的是平衡，拼的是默契，大家把掌声送给每一支坚持到最后的队伍。接下来，进入今天最有笑点的项目——你划我猜！</p></div>
+        </div>
+      </article>
+
+      <article class="script-block card">
+        <div class="script-head"><h3>项目四 · 你划我猜（完整流程）</h3><span class="time">15:13—15:38</span></div>
+        <div class="script-body">
+          <div class="line"><span class="speaker fang">方锐</span><p>我来说一下规则。四支队伍分开比，一队一队轮着来。每队选 2 名队员上台比划，其余队员在台下猜。比划的队员面向队友，主持人或工作人员把词卡举在比划者正前方，只有比划的 2 人能看，观众和猜词队员都看不到。</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>比划时可以用肢体动作、表情、拟声词，也可以给同义词提示。但是注意：不能说出词语中的任何一个字，也不能说同音字；不能写字、不能画图；不能指现场实物；不能直接翻译成外语。队友猜对，主持人喊“过”，换下一个词。猜不出来可以喊“跳过”，但每队最多跳 2 次。</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>每队限时 90 秒，猜对 1 个得 1 分。四队轮流上场，按得分排名，得分最高的队伍获胜。如果出现同分，加赛 30 秒，直到分出高低。等待的三支队伍既是观众，也是监督员，不能提示；如果提示，本题作废。比划者说出词中字、写字、画图，本题也作废，直接换下一个词。</p></div>
+          <div class="stage"><b>动作</b>准备 4 套难度相当的词库，每套 20 词；队长抽签决定“套题 + 出场顺序”。计分员用页面下方计时器与记分表同步记录。</div>
+          <div class="line"><span class="speaker">陈青青</span><p>请四位队长到台前抽签。签上写两组信息：A/B/C/D 代表套题，1/2/3/4 代表出场顺序。抽到 1 号的队伍先上。</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>顺序出来了：第一队<span class="todo">××</span>队，第二队<span class="todo">××</span>队，第三队<span class="todo">××</span>队，第四队<span class="todo">××</span>队。请第一队 2 名比划队员上台，其余队员站到台下正前方。</p></div>
+          <div class="stage"><b>动作</b>工作人员举词卡，站在比划者前方、背对观众；计时员举牌倒数 3、2、1。</div>
+          <div class="line"><span class="speaker fang">方锐</span><p>第一队准备——3、2、1，开始！</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>时间到！第一队有效得分<span class="todo">××</span>分。请第二队上台，第一队回到台下休息。</p></div>
+          <div class="stage"><b>动作</b>每队结束后立即报分，不评论、不重赛；工作人员迅速换下一套词卡。</div>
+          <div class="line"><span class="speaker fang">方锐</span><p>第二队准备——3、2、1，开始！……时间到，第二队有效得分<span class="todo">××</span>分。</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>第三队准备——3、2、1，开始！……时间到，第三队有效得分<span class="todo">××</span>分。</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>第四队准备——3、2、1，开始！……时间到，第四队有效得分<span class="todo">××</span>分。</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>四队全部完成。你划我猜项目，<span class="todo">××</span>队以<span class="todo">××</span>分获得第一。比划的是动作，猜的是默契，笑到最后的是——<span class="todo">××</span>队！也感谢所有队员的精彩表现。</p></div>
+          <div class="stage"><b>提示</b>若现场时间紧张，可取消同分加赛，直接按“并列第一”处理，两队同时上台领奖。</div>
+        </div>
+      </article>
+
+      <article class="script-block card">
+        <div class="script-head"><h3>统分 · 四项颁奖</h3><span class="time">15:38—15:53</span></div>
+        <div class="script-body">
+          <div class="stage"><b>动作</b>计分员把四项第一名写在手卡上，按顺序交给主持人；奖品按队伍人数提前分堆，贴好队名。</div>
+          <div class="line"><span class="speaker">陈青青</span><p>四个项目全部结束。让我们回顾一下今天的最终赢家。</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>摸石头过河，一步一个脚印，稳中求胜！让我们用最热烈的掌声，请出摸石头过河获胜队伍——<span class="todo">××</span>队登场！有请陈保才总为<span class="todo">××</span>队颁发奖品。请摆好胜利的姿势，全体伙伴，让我们用镜头记录下这荣耀的时刻！</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>同心鼓，鼓动人心，齐心协力！恭喜同心鼓获胜队伍——<span class="todo">××</span>队！请队长带领队员上台领奖，有请刘胜总为<span class="todo">××</span>队颁奖！</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>接下来是夹纸运杯，比的是平衡，拼的是默契！<span class="todo">××</span>队不仅业务水平高，夹纸运杯的功夫也超棒！请队长带领队员上台领奖，有请刘骅总为<span class="todo">××</span>队颁奖！</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>比划的是动作，猜的是默契，笑到最后的是——<span class="todo">××</span>队！恭喜你划我猜获胜队伍！请队长带领队员上台领奖，有请<span class="todo">××</span>领导为<span class="todo">××</span>队颁奖！</p></div>
+          <div class="stage"><b>动作</b>每项颁奖控制在 3 分钟：上台—颁奖—合影—下台。四项可连续进行，中间不串长词。</div>
+          <div class="line"><span class="speaker">陈青青</span><p>好，四个项目的颁奖到这里就全部结束了。恭喜所有获奖队伍，也感谢每一位伙伴的全力以赴！接下来，我们进入今天最后一个安静环节——写心愿。</p></div>
+        </div>
+      </article>
+
+      <article class="script-block card">
+        <div class="script-head"><h3>写心愿 · 总结 · 合影</h3><span class="time">15:53—16:15</span></div>
+        <div class="script-body">
+          <div class="stage"><b>动作</b>郭清、张金分发卡纸和笔；每人一张，右下角预留署名位置；抽奖箱放在舞台侧前方。</div>
+          <div class="line"><span class="speaker fang">方锐</span><p>请大家拿到卡纸和笔之后，找一个舒服的位置，可以坐着，也可以站着。在这个环节里，我们不想比赛，也不拼速度，只希望大家静下心来，写一写自己的心愿。可以写对公司的祝福和期待，可以写对自己未来的目标，也可以写对团队、对同事想说的话。内容不限，长短不限，一句话可以，一段话也可以。</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>要提醒大家：写的时候认真写，并在右下角署上自己的名字。因为今天晚餐时，我们会从这些心愿卡里抽取三等奖三名、二等奖两名、一等奖一名。抽到谁，谁就上台领奖，同时我们会把这张心愿卡读出来，和大家一起分享。所以，这既是一份心愿，也可能是一份惊喜。现在请大家安静下来，拿起笔，写下你的心愿。</p></div>
+          <div class="stage"><b>动作</b>8 分钟后提示“还有 2 分钟”；收卡时检查是否署名，未署名现场补签；收齐后当众打乱、投入抽奖箱。</div>
+          <div class="line"><span class="speaker">陈青青</span><p>好，我看大家都写得差不多了。现在请郭清、张金把心愿卡收上来，统一装好。这些心愿卡我们先保管好，晚宴时由董事长现场抽取。抽到谁，谁就获奖，我们也会把心愿读出来，让大家一起听听你的心愿。</p></div>
+          <div class="line"><span class="speaker fang">方锐</span><p>到这里，今天的活动也接近尾声了。下面，让我们用最热烈的掌声，有请董事长为我们做总结讲话！</p></div>
+          <div class="stage"><b>动作</b>董事长讲话 5—8 分钟；讲话结束后，主持人直接接总结，不另加领导发言。</div>
+          <div class="line"><span class="speaker">陈青青</span><p>感谢董事长的精彩总结和殷切期望！今天从摸石头过河到你划我猜，大家比的是速度，拼的是默契。赛场上我们是对手，互相追赶、互相较劲；工作中我们更是并肩作战的伙伴、同事、战友。比赛有输赢，但团队没有输家。每一次击掌、每一次接力、每一次掉下来又重新开始，都是今天最动人的画面。也正是这些瞬间，让我们更加明白什么叫“秉承安远志，铸就南药魂”。</p></div>
+          <div class="line"><span class="speaker">陈青青</span><p>再次感谢各位领导的参与和支持，也感谢每一位伙伴的全力以赴。今天大家写下的心愿卡我们已经统一收好，晚宴时由董事长现场抽取。最后，祝安远、祝南药，在大家的共同努力下，越来越好、越走越稳、越干越强！祝各位伙伴工作顺利、身体健康、心想事成！本次团建活动的竞技部分到此圆满结束，请大家稍作休息，准备移步晚宴。我们晚饭见！</p></div>
+          <div class="stage"><b>动作</b>全员合影：红、绿、蓝、紫从左到右，领导居中；摄影连拍 3 张后喊“换姿势”再拍 1 张。</div>
+        </div>
+      </article>
+
+    </div>
+  </section>  <!-- 05 规则 -->
+  <section class="section" id="rules">
+    <div class="section-head">
+      <div>
+        <div class="section-no">05 / GAME RULES</div>
+        <h2>四个项目规则卡</h2>
+      </div>
+      <p class="section-desc">这四张卡可以直接打印给裁判和队长。规则卡只保留“怎么比、怎么判、怎么赢”，不写串场词，避免现场口径不一致。</p>
+    </div>
+
+    <div class="game-grid">
+      <article class="game-card card">
+        <div class="game-top">
+          <div class="game-title"><h3>摸石头过河</h3><p>TEAM RELAY · 稳中求进</p></div>
+          <div class="game-glyph">渡</div>
+        </div>
+        <div class="meta-chips"><span>每队 12 人</span><span>两端各 6 人</span><span>3 块泡沫垫</span><span>2 分钟适应</span></div>
+        <ol>
+          <li>四队同时开赛，赛道宽度不少于 3 米，两端各设起点线与折返线。</li>
+          <li>队员用 3 块垫子交替前移，双脚只能踩在垫子上；身体任何部位触地即判“落地”。</li>
+          <li>到达对面后，必须把 3 块垫子完整交到下一名队员手中，下一人才能出发。</li>
+          <li>最后一名队员连同垫子完全越过终点线，计时停止。</li>
+          <li>用时最短者获胜；落地每次加 5 秒，抢跑每次加 5 秒，垫子未交接即出发加 5 秒。</li>
+        </ol>
+        <div class="judge"><b>裁判要点：</b>每条赛道 1 名裁判，站在中段侧方，重点看脚是否落地、交接是否到手里。不要站在队员行进路线上。垫子打滑时立即叫停，擦干地面后从原地继续，已用时间保留。</div>
+      </article>
+
+      <article class="game-card green card">
+        <div class="game-top">
+          <div class="game-title"><h3>同心鼓</h3><p>TEAM RHYTHM · 一鼓作气</p></div>
+          <div class="game-glyph">鼓</div>
+        </div>
+        <div class="meta-chips"><span>每队 11 人</span><span>10 人拉绳 + 1 人放球</span><span>2 分钟适应</span><span>2 分钟比赛</span></div>
+        <ol>
+          <li>四队抽签决定顺序，单鼓依次上场；候场队退到鼓区侧后方 3 米外。</li>
+          <li>10 名队员各拉一根绳，把鼓面拉平；1 名队员负责放球和捡球。</li>
+          <li>放球后开始累计，球被鼓面弹起算 1 次；球落地后可捡起继续，落地期间不计次。</li>
+          <li>只能由鼓面触球，手、腿、身体碰球不计该次；绳子脱手后需重新拉好再继续。</li>
+          <li>2 分钟内累计有效次数最多者获胜；同分则加赛 30 秒。</li>
+        </ol>
+        <div class="judge"><b>裁判要点：</b>1 名主裁看整体，1 名计数员站在鼓侧前方大声报数，1 名计时员控制 2 分钟。计数以“球离开鼓面并再次落下”为 1 次，连续快颠时用计数器辅助。球飞出安全区立即停表捡球，时间不补。</div>
+      </article>
+
+      <article class="game-card blue card">
+        <div class="game-top">
+          <div class="game-title"><h3>夹纸运杯</h3><p>TEAM BALANCE · 稳中求快</p></div>
+          <div class="game-glyph">衡</div>
+        </div>
+        <div class="meta-chips"><span>每队 12 人</span><span>两端各 6 人</span><span>A4 纸 + 纸杯</span><span>一次同时开赛</span></div>
+        <ol>
+          <li>四队同时开赛，赛道两端各站 6 人；纸杯不装水，杯口朝上放在头顶。</li>
+          <li>用膝盖夹住 A4 纸，头顶纸杯，从起点走到对面，把纸和杯交给下一名队员。</li>
+          <li>交接时下一名队员必须夹好纸、顶好杯，上一名队员才能松手返回队尾。</li>
+          <li>纸或杯掉落，原地捡起、重新夹好顶好再继续，计时不停；不得用手扶杯行走。</li>
+          <li>最后一名队员连人带杯越过终点线停表；用时最短者获胜。抢跑每次加 5 秒，奔跑每次加 5 秒。</li>
+        </ol>
+        <div class="judge"><b>裁判要点：</b>重点看“是否用手扶杯”和“交接是否完成”。纸杯被风吹落不算违规，但必须原地整理。地面湿滑时先处理再开赛；建议穿运动鞋，不穿高跟鞋、拖鞋。</div>
+      </article>
+
+      <article class="game-card purple card">
+        <div class="game-top">
+          <div class="game-title"><h3>你划我猜</h3><p>TEAM CHEMISTRY · 心有灵犀</p></div>
+          <div class="game-glyph">猜</div>
+        </div>
+        <div class="meta-chips"><span>每队 2 人比划</span><span>其余队员猜</span><span>每队 90 秒</span><span>4 套等难度词库</span></div>
+        <ol>
+          <li>四队抽签决定“套题 + 顺序”，一队一队轮着来；等待队伍在台下指定区域，不得提示。</li>
+          <li>比划者面向本队猜词队员，词卡举在比划者正前方、背对观众；只有 2 名比划者能看。</li>
+          <li>可用动作、表情、拟声词、同义词提示；不得说出词中任何字及同音字，不得写字、画图、指实物、翻译外语。</li>
+          <li>队友猜对，主持人喊“过”，换下一词；猜不出可喊“跳过”，每队最多 2 次。</li>
+          <li>90 秒内每猜对 1 词得 1 分，得分最高者获胜；同分加赛 30 秒。违规本题作废，直接换词。</li>
+        </ol>
+        <div class="judge"><b>裁判要点：</b>1 名举牌员、1 名计时员、1 名计分员。举牌员只负责翻词，不提示；计时员在 60 秒、30 秒、10 秒各报一次；计分员听到“过”立即加 1 分。观众提示一次，本题作废并口头警告。</div>
+      </article>
+    </div>
+
+    <div class="grid-2" style="margin-top:18px">
+      <div class="callout warn">
+        <div class="callout-icon">!</div>
+        <div>
+          <h4>统一判罚口径</h4>
+          <p>所有加时项目统一为“每次 5 秒”，由赛道裁判举旗并口头报“加 5 秒”，计分员记录在成绩表备注栏。比赛结束后不接受口头申诉，由裁判长现场裁定。</p>
+        </div>
+      </div>
+      <div class="callout info">
+        <div class="callout-icon">i</div>
+        <div>
+          <h4>安全底线</h4>
+          <p>接力项目不得奔跑、不得推挤；同心鼓绳子不得缠手腕；你划我猜不得做危险动作。现场设急救箱和 1 名安全员，最近医院路线提前打印放在签到处。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 计分 -->
+  <section class="section" id="score">
+    <div class="section-head">
+      <div>
+        <div class="section-no">06 / SCORING</div>
+        <h2>计分表与现场计时器</h2>
+      </div>
+      <p class="section-desc">计分表可直接在浏览器里填写并自动汇总；刷新页面会清空，正式成绩请同时用纸质表备份。计时器默认 90 秒，可切换 2 分钟。</p>
+    </div>
+
+    <div class="card card-pad">
+      <div class="table-wrap">
+        <table class="score-table" id="scoreTable">
+          <thead>
+            <tr>
+              <th style="width:34px">名次</th>
+              <th>队伍</th>
+              <th>摸石头过河<br><span style="font-weight:400">用时（秒）</span></th>
+              <th>同心鼓<br><span style="font-weight:400">有效次数</span></th>
+              <th>夹纸运杯<br><span style="font-weight:400">用时（秒）</span></th>
+              <th>你划我猜<br><span style="font-weight:400">得分</span></th>
+              <th>四项名次分<br><span style="font-weight:400">自动汇总</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-team="赤焰之红队">
+              <td><span class="rank-badge">—</span></td>
+              <td><strong>赤焰之红队</strong></td>
+              <td><input class="score-input" data-key="stone" type="number" min="0" placeholder="如 185"></td>
+              <td><input class="score-input" data-key="drum" type="number" min="0" placeholder="如 86"></td>
+              <td><input class="score-input" data-key="paper" type="number" min="0" placeholder="如 142"></td>
+              <td><input class="score-input" data-key="guess" type="number" min="0" placeholder="如 12"></td>
+              <td><span class="score-total">—</span></td>
+            </tr>
+            <tr data-team="雷霆之绿队">
+              <td><span class="rank-badge">—</span></td>
+              <td><strong>雷霆之绿队</strong></td>
+              <td><input class="score-input" data-key="stone" type="number" min="0" placeholder="如 185"></td>
+              <td><input class="score-input" data-key="drum" type="number" min="0" placeholder="如 86"></td>
+              <td><input class="score-input" data-key="paper" type="number" min="0" placeholder="如 142"></td>
+              <td><input class="score-input" data-key="guess" type="number" min="0" placeholder="如 12"></td>
+              <td><span class="score-total">—</span></td>
+            </tr>
+            <tr data-team="沧溟之蓝队">
+              <td><span class="rank-badge">—</span></td>
+              <td><strong>沧溟之蓝队</strong></td>
+              <td><input class="score-input" data-key="stone" type="number" min="0" placeholder="如 185"></td>
+              <td><input class="score-input" data-key="drum" type="number" min="0" placeholder="如 86"></td>
+              <td><input class="score-input" data-key="paper" type="number" min="0" placeholder="如 142"></td>
+              <td><input class="score-input" data-key="guess" type="number" min="0" placeholder="如 12"></td>
+              <td><span class="score-total">—</span></td>
+            </tr>
+            <tr data-team="绛霄之紫队">
+              <td><span class="rank-badge">—</span></td>
+              <td><strong>绛霄之紫队</strong></td>
+              <td><input class="score-input" data-key="stone" type="number" min="0" placeholder="如 185"></td>
+              <td><input class="score-input" data-key="drum" type="number" min="0" placeholder="如 86"></td>
+              <td><input class="score-input" data-key="paper" type="number" min="0" placeholder="如 142"></td>
+              <td><input class="score-input" data-key="guess" type="number" min="0" placeholder="如 12"></td>
+              <td><span class="score-total">—</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">汇总规则：每个项目按成绩排名，第 1 名 4 分、第 2 名 3 分、第 3 名 2 分、第 4 名 1 分；用时类项目用时越短排名越高，次数/得分类项目数值越大排名越高。四项名次分相加为团体总分，同分时以“你划我猜”得分高者优先。</p>
+      <div class="score-actions">
+        <button class="btn btn-primary" type="button" onclick="computeScores()">立即汇总</button>
+        <button class="btn btn-ghost" type="button" onclick="resetScores()">清空表格</button>
+        <button class="btn btn-ghost" type="button" onclick="window.print()">打印空白计分表</button>
+      </div>
+    </div>
+
+    <div class="timer-card" id="timerCard">
+      <div>
+        <div class="label">YOU DRAW I GUESS · 现场计时</div>
+        <div class="timer-display" id="timerDisplay">01:30</div>
+      </div>
+      <div class="timer-actions">
+        <button type="button" onclick="setTimer(90)">90 秒</button>
+        <button type="button" onclick="setTimer(120)">120 秒</button>
+        <button type="button" class="primary" id="startBtn" onclick="toggleTimer()">开始</button>
+        <button type="button" onclick="resetTimer()">重置</button>
+      </div>
+    </div>
+  </section>  <!-- 07 晚宴 -->
+  <section class="section" id="dinner">
+    <div class="section-head">
+      <div>
+        <div class="section-no">07 / DINNER</div>
+        <h2>晚宴与抽奖</h2>
+      </div>
+      <p class="section-desc">晚宴按“致辞—祝酒—用餐—互动—抽奖—K 歌”推进。抽奖直接使用下午收齐的心愿卡，不再另设抽奖箱；抽奖前当众检查、打乱，避免重复中奖。</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card card-pad">
+        <h3 style="margin:0 0 14px;font-family:var(--serif);font-size:21px">晚宴时间建议</h3>
+        <ol class="timeline" style="--x:0">
+          <li class="key"><time>17:30</time><div class="timeline-card"><h4>主持人开场 <span class="tag">3 分钟</span></h4><p>回顾下午活动，说明晚宴三个环节：吃好、聊好、玩好。</p></div></li>
+          <li><time>17:33</time><div class="timeline-card"><h4>领导致辞 <span class="tag">5 分钟</span></h4><p>温总致辞；主持人接祝酒词。</p></div></li>
+          <li><time>17:38</time><div class="timeline-card"><h4>共同举杯、开餐 <span class="tag">25 分钟</span></h4><p>自由用餐，音控播放轻音乐，不安排台上环节。</p></div></li>
+          <li><time>18:03</time><div class="timeline-card"><h4>互动：徒手穿花裤 <span class="tag green">10 分钟</span></h4><p>每队 1 人，4 人同台，90 秒内把花裤提到腰上。</p></div></li>
+          <li class="key"><time>18:13</time><div class="timeline-card"><h4>抽奖：三等、二等、一等 <span class="tag red">20 分钟</span></h4><p>3 + 2 + 1 名，每人限中一次，中奖者不在场则重抽。</p></div></li>
+          <li><time>18:33</time><div class="timeline-card"><h4>自由 K 歌 <span class="tag">至结束</span></h4><p>主持人交回音控，提醒饮酒安全与返程安排。</p></div></li>
+        </ol>
+      </div>
+
+      <div class="stack">
+        <div class="callout warn">
+          <div class="callout-icon">!</div>
+          <div>
+            <h4>抽奖规则必须现场说清</h4>
+            <p>心愿卡即抽奖券，署名有效；未提交、未署名视为放弃。三等奖 3 名、二等奖 2 名、一等奖 1 名，每人限中一次，已中奖卡片不再放回。中奖者不在现场，重新抽取。一等奖得主分享一句心愿，由董事长颁奖并合影。</p>
+          </div>
+        </div>
+        <div class="card card-pad">
+          <h4 style="margin:0 0 10px;font-size:15px">抽奖执行顺序</h4>
+          <div class="stack-sm">
+            <div class="kv"><span>1. 验箱</span><span>当众打开、检查、打乱</span></div>
+            <div class="kv"><span>2. 三等奖</span><span>原料药厂刘总、王总，制剂厂孙总各抽 1 名</span></div>
+            <div class="kv"><span>3. 二等奖</span><span>原料药陈总、制剂厂刘总各抽 1 名</span></div>
+            <div class="kv"><span>4. 一等奖</span><span>温总抽 1 名，董事长颁奖</span></div>
+            <div class="kv"><span>5. 收尾</span><span>合影，卡片回收归档</span></div>
+          </div>
+        </div>
+        <div class="callout info">
+          <div class="callout-icon">i</div>
+          <div>
+            <h4>领导称谓先统一</h4>
+            <p>原稿中“陈总”“陈保才总”“原料药陈总”“刘总”“刘胜总”“刘骅总”“制剂厂刘总”容易混淆。建议做一张“姓名—职务—负责环节”手卡，主持人与颁奖领导各一份，现场只按手卡称呼。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-pad" style="margin-top:18px">
+      <h3 style="margin:0 0 14px;font-family:var(--serif);font-size:21px">晚宴主持串词</h3>
+      <div class="script-body" style="padding:0">
+        <div class="line"><span class="speaker">陈青青</span><p>各位领导，各位伙伴，大家晚上好！今天的团建，大家比了速度，拼了默契，也收获了欢笑。现在，终于到了大家最期待的晚宴环节！今晚，我们不比赛，不拼速度，只做三件事：吃好、聊好、玩好！首先，有请温总为我们晚宴致辞，大家掌声欢迎！</p></div>
+        <div class="stage"><b>动作</b>温总致辞 3—5 分钟；致辞结束后，董事长起身，主持人递话筒。</div>
+        <div class="line"><span class="speaker leader">董事长</span><p><span class="todo">致辞要点待补</span>（建议 2—3 分钟：肯定下午的团队表现，感谢员工与家属，祝愿公司与个人共同成长，提议共同举杯。）</p></div>
+        <div class="line"><span class="speaker fang">方锐</span><p>感谢董事长的致辞。现在，请大家共同举杯，为今天的团结协作，为明天的更好成绩，干杯！</p></div>
+        <div class="line"><span class="speaker">陈青青</span><p>好，晚宴开始，请大家尽情享用！</p></div>
+        <div class="stage"><b>动作</b>开餐 20—25 分钟；音控播放轻音乐；主持人下台简单巡场，不逐桌敬酒。</div>
+        <div class="line"><span class="speaker fang">方锐</span><p>好，大家吃得差不多了。在抽奖之前，我们先来一个小游戏，热热场——徒手穿花裤！</p></div>
+        <div class="line"><span class="speaker">陈青青</span><p>规则很简单。每队派 1 人上台，4 人站成一排，每人一条花裤。主持人喊“开始”前，允许用手把裤子套到脚踝处；套好后，所有人手离开裤子。听到“开始”后，不能用手碰裤子，只能靠扭、跳、蹲等动作，把花裤提到腰上。每人限时 90 秒，先穿好并举手的人获胜。</p></div>
+        <div class="stage"><b>动作</b>提前确认花裤尺码与松紧；参赛者穿运动鞋；台下不哄笑、不拍摄尴尬角度；准备 3 份参与奖。</div>
+        <div class="line"><span class="speaker fang">方锐</span><p>各就各位，准备好了吗——开始！</p></div>
+        <div class="line"><span class="speaker">陈青青</span><p>时间到！恭喜<span class="todo">××</span>获得“徒手穿花裤”的胜利！也感谢另外 3 位伙伴的参与，每人一份参与奖。请<span class="todo">××</span>领导为获胜者颁奖。</p></div>
+        <div class="line"><span class="speaker fang">方锐</span><p>小游戏结束，接下来是今晚最激动人心的时刻——抽奖环节！今晚一共设置三个奖项：一等奖 1 名，二等奖 2 名，三等奖 3 名。看看花落谁家！</p></div>
+        <div class="line"><span class="speaker">陈青青</span><p>抽奖前说明一下：抽奖箱里是大家下午写的心愿卡。请所有中奖的伙伴上台时，先说出自己的名字和队伍；如果抽到的人不在现场，我们重新抽取。每人限中一次，已中奖的卡片不再放回。</p></div>
+        <div class="stage"><b>动作</b>当众开箱、打乱；抽奖领导每抽一张，主持人先念名字，再展示卡片；计分员在名单上打勾，防止重复。</div>
+        <div class="line"><span class="speaker fang">方锐</span><p>我们先抽取三等奖。有请原料药厂刘总，抽取三等奖 1 名，请念出中奖者名字。</p></div>
+        <div class="line"><span class="speaker">陈青青</span><p>恭喜<span class="todo">××</span>！请上台领奖，有请刘总为获奖者颁奖。</p></div>
+        <div class="line"><span class="speaker fang">方锐</span><p>有请原料药厂王总，抽取三等奖 1 名，请念出中奖者名字。</p></div>
+        <div class="line"><span class="speaker">陈青青</span><p>恭喜<span class="todo">××</span>！请上台领奖，请王总为获奖者颁奖。</p></div>
+        <div class="line"><span class="speaker fang">方锐</span><p>接下来，有请制剂厂孙总，抽取三等奖 1 名，请念出中奖者名字。</p></div>
+        <div class="line"><span class="speaker">陈青青</span><p>恭喜<span class="todo">××</span>！请上台领奖，请孙总为获奖者颁奖。</p></div>
+        <div class="line"><span class="speaker fang">方锐</span><p>恭喜三位三等奖的伙伴。下面抽取二等奖，有请原料药陈总抽取二等奖 1 名。</p></div>
+        <div class="line"><span class="speaker">陈青青</span><p>恭喜<span class="todo">××</span>！请上台领奖，请陈总为获奖者颁奖。</p></div>
+        <div class="line"><span class="speaker fang">方锐</span><p>有请制剂厂刘总抽取二等奖 1 名，请念出中奖者名字。</p></div>
+        <div class="line"><span class="speaker">陈青青</span><p>恭喜<span class="todo">××</span>！请上台领奖，请刘总为获奖者颁奖。</p></div>
+        <div class="line"><span class="speaker fang">方锐</span><p>恭喜两位二等奖的伙伴。最后，是今晚的最高奖项——一等奖。有请温总上台，为我们抽取一等奖，请念出中奖者的名字。</p></div>
+        <div class="line"><span class="speaker">陈青青</span><p>恭喜<span class="todo">××</span>！请上台领奖。请你先说出自己写的心愿，完成了才可以领奖。</p></div>
+        <div class="line"><span class="speaker fang">方锐</span><p>好，我们请温总把这张心愿卡读出来，和大家一起分享！</p></div>
+        <div class="line"><span class="speaker">陈青青</span><p>请温总为获奖者颁奖。恭喜所有中奖的伙伴，也感谢各位领导给我们带来的好运。</p></div>
+        <div class="line"><span class="speaker fang">方锐</span><p>今晚的抽奖环节到此结束。接下来是自由 K 歌时间，想唱歌的伙伴可以自己点歌，大家尽情放松。也提醒大家：喝酒不开车，返程注意安全。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 分工物资 -->
+  <section class="section" id="ops">
+    <div class="section-head">
+      <div>
+        <div class="section-no">08 / OPERATIONS</div>
+        <h2>人员分工与物资清单</h2>
+      </div>
+      <p class="section-desc">主持人不要兼裁判、计时和计分。下面是最低配置，人数充足时可给每条赛道再配 1 名协助员。</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card card-pad">
+        <h3 style="margin:0 0 14px;font-family:var(--serif);font-size:21px">人员分工</h3>
+        <div class="table-wrap" style="border:0">
+          <table>
+            <thead><tr><th>角色</th><th>人数</th><th>职责</th></tr></thead>
+            <tbody>
+              <tr><td><strong>总控</strong></td><td>1</td><td>盯总时间，决定压缩哪个环节；对接场地、餐饮、领导行程</td></tr>
+              <tr><td><strong>主持人</strong></td><td>2</td><td>陈青青、方锐；只负责串场、规则说明、气氛</td></tr>
+              <tr><td><strong>裁判长</strong></td><td>1</td><td>统一判罚口径，处理争议，最终签字确认成绩</td></tr>
+              <tr><td><strong>赛道裁判</strong></td><td>4</td><td>接力项目每队 1 人；同心鼓、你划我猜各 1 人</td></tr>
+              <tr><td><strong>计时员</strong></td><td>1</td><td>统一发令、停表；同时看 4 条赛道时用秒表分组记录</td></tr>
+              <tr><td><strong>计分员</strong></td><td>1</td><td>登记成绩、算名次分、填写颁奖手卡</td></tr>
+              <tr><td><strong>物资员</strong></td><td>2</td><td>郭清、张金；发手环、发卡纸、收心愿卡、递奖品</td></tr>
+              <tr><td><strong>音控 / 摄影</strong></td><td>1+1</td><td>音乐、话筒、合影；准备备用电池和存储卡</td></tr>
+              <tr><td><strong>安全员</strong></td><td>1</td><td>急救箱、最近医院路线、处理扭伤/碰撞</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card card-pad">
+        <h3 style="margin:0 0 14px;font-family:var(--serif);font-size:21px">物资清单</h3>
+        <div class="check-grid">
+          <label class="check"><input type="checkbox"><span>泡沫垫 12 块（每队 3 块）</span></label>
+          <label class="check"><input type="checkbox"><span>同心鼓 1 面、鼓绳 10 根、球 3 个</span></label>
+          <label class="check"><input type="checkbox"><span>A4 纸 2 包、纸杯 60 个</span></label>
+          <label class="check"><input type="checkbox"><span>词卡 4 套（每套 20 词）</span></label>
+          <label class="check"><input type="checkbox"><span>手环 4 色，按人数 +10% 备量</span></label>
+          <label class="check"><input type="checkbox"><span>心愿卡、签字笔 60 套</span></label>
+          <label class="check"><input type="checkbox"><span>抽奖箱 1 个、封箱胶带</span></label>
+          <label class="check"><input type="checkbox"><span>花裤 4 条（不同尺码）</span></label>
+          <label class="check"><input type="checkbox"><span>秒表 4 个、哨子 2 个、裁判旗 4 面</span></label>
+          <label class="check"><input type="checkbox"><span>计分板、马克笔、成绩登记表</span></label>
+          <label class="check"><input type="checkbox"><span>音响、无线麦 2 支、备用电池</span></label>
+          <label class="check"><input type="checkbox"><span>急救箱、冰袋、创可贴、云南白药</span></label>
+          <label class="check"><input type="checkbox"><span>游戏奖品 48 份（按 4 队 × 12 人）</span></label>
+          <label class="check"><input type="checkbox"><span>晚宴抽奖 6 份、花裤参与奖 3 份</span></label>
+          <label class="check"><input type="checkbox"><span>地贴/胶带、卷尺、垃圾袋</span></label>
+          <label class="check"><input type="checkbox"><span>领导席位卡、颁奖手卡</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:18px">
+      <div class="callout info">
+        <div class="callout-icon">1</div>
+        <div><h4>赛前 60 分钟</h4><p>画赛道、试音响、试鼓、摆奖品；确认领导到场顺序；把四队名单贴到签到处。</p></div>
+      </div>
+      <div class="callout info">
+        <div class="callout-icon">2</div>
+        <div><h4>赛前 20 分钟</h4><p>裁判集合，统一“加 5 秒”口径；主持人核对领导称谓手卡；物资员按队分堆奖品。</p></div>
+      </div>
+      <div class="callout info">
+        <div class="callout-icon">3</div>
+        <div><h4>每项结束</h4><p>裁判长签字—计分员登记—主持人拿手卡—物资员递奖品，四步不跳步。</p></div>
+      </div>
+    </div>
+  </section>  <!-- 09 附录 -->
+  <section class="section" id="appendix">
+    <div class="section-head">
+      <div>
+        <div class="section-no">09 / APPENDIX</div>
+        <h2>附录与出发前清单</h2>
+      </div>
+      <p class="section-desc">词库只给示例，正式使用前请按公司业务与在场人员年龄结构调整。涉及领导姓名、奖品名称、队伍人数的黄色项，必须在打印前替换。</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card card-pad" id="checklist">
+        <h3 style="margin:0 0 12px;font-family:var(--serif);font-size:21px">出发前核对</h3>
+        <div class="check-grid">
+          <label class="check"><input type="checkbox"><span>四队队员名单已发群，每队人数一致</span></label>
+          <label class="check"><input type="checkbox"><span>绛霄之紫队队长已确定</span></label>
+          <label class="check"><input type="checkbox"><span>每队 12 人参赛，替补名单已准备</span></label>
+          <label class="check"><input type="checkbox"><span>四项颁奖领导与称谓已确认</span></label>
+          <label class="check"><input type="checkbox"><span>二等奖、三等奖奖品名称已确认</span></label>
+          <label class="check"><input type="checkbox"><span>奖品数量：48 + 6 + 3 份已到齐</span></label>
+          <label class="check"><input type="checkbox"><span>心愿卡已编号或署名规则已定</span></label>
+          <label class="check"><input type="checkbox"><span>抽奖箱、花裤、词卡已到位</span></label>
+          <label class="check"><input type="checkbox"><span>同心鼓 1 面、球 3 个已试过</span></label>
+          <label class="check"><input type="checkbox"><span>秒表 4 个、哨子、裁判旗已到位</span></label>
+          <label class="check"><input type="checkbox"><span>音响、无线麦、备用电池已测试</span></label>
+          <label class="check"><input type="checkbox"><span>急救箱与最近医院路线已准备</span></label>
+          <label class="check"><input type="checkbox"><span>晚宴返程/代驾安排已通知</span></label>
+          <label class="check"><input type="checkbox"><span>雨天备用场地或遮雨方案已确认</span></label>
+          <label class="check"><input type="checkbox"><span>摄影点位与合影站位已确认</span></label>
+          <label class="check"><input type="checkbox"><span>主持人手卡已打印，黄色待补项已清零</span></label>
+        </div>
+      </div>
+
+      <div class="stack">
+        <div class="callout warn">
+          <div class="callout-icon">!</div>
+          <div>
+            <h4>三个容易在现场翻车的点</h4>
+            <p><strong>同心鼓排队：</strong>一队比赛时，下一队不要围在鼓边，否则绳子和球容易互相干扰。用胶带标出“比赛区”和“候场区”。</p>
+            <p><strong>你划我猜举牌：</strong>词卡必须背对观众、正对比划者；举牌员不要站在猜词队员一侧，否则一眼就看到了。</p>
+            <p><strong>抽奖重复：</strong>中奖卡片当场抽出、当场登记、当场收走；不要抽完再统一核对，否则容易重复。</p>
+          </div>
+        </div>
+        <div class="callout info">
+          <div class="callout-icon">i</div>
+          <div>
+            <h4>天气与场地</h4>
+            <p>若在室外，摸石头过河和夹纸运杯对地面要求最高：避免湿滑、碎石和明显坡度。风力较大时，夹纸运杯的纸杯容易被吹落，建议移到背风处或改为室内。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-pad" style="margin-top:18px">
+      <h3 style="margin:0 0 6px;font-family:var(--serif);font-size:21px">你划我猜示例词库</h3>
+      <p class="small muted" style="margin:0 0 14px">四套题难度尽量接近，每套 20 词；正式使用前请替换 20%—30%，避免提前泄题。词条按“具体名词—动作—成语/抽象词”混合搭配。</p>
+      <div class="word-grid">
+        <div class="word-set card">
+          <h4>A 套 · 生活类</h4>
+          <p>适合第一队，具体名词为主</p>
+          <div class="words">
+            <span class="word">刷牙</span><span class="word">打伞</span><span class="word">跳绳</span><span class="word">拍照</span>
+            <span class="word">煮面</span><span class="word">扫地</span><span class="word">系鞋带</span><span class="word">挤地铁</span>
+            <span class="word">吹头发</span><span class="word">剥橘子</span><span class="word">晾衣服</span><span class="word">找钥匙</span>
+            <span class="word">点外卖</span><span class="word">戴耳机</span><span class="word">贴创可贴</span><span class="word">打喷嚏</span>
+            <span class="word">洗车</span><span class="word">剪指甲</span><span class="word">拍蚊子</span><span class="word">开瓶盖</span>
+          </div>
+        </div>
+        <div class="word-set card">
+          <h4>B 套 · 职场类</h4>
+          <p>适合第二队，动作 + 场景</p>
+          <div class="words">
+            <span class="word">开会</span><span class="word">打卡</span><span class="word">加班</span><span class="word">做报表</span>
+            <span class="word">打印文件</span><span class="word">接电话</span><span class="word">发邮件</span><span class="word">做 PPT</span>
+            <span class="word">签合同</span><span class="word">出差</span><span class="word">培训</span><span class="word">面试</span>
+            <span class="word">复盘</span><span class="word">汇报</span><span class="word">报销</span><span class="word">团建</span>
+            <span class="word">搬工位</span><span class="word">赶 deadline</span><span class="word">查数据</span><span class="word">开视频会</span>
+          </div>
+        </div>
+        <div class="word-set card">
+          <h4>C 套 · 动作类</h4>
+          <p>适合第三队，肢体表现空间大</p>
+          <div class="words">
+            <span class="word">游泳</span><span class="word">滑雪</span><span class="word">钓鱼</span><span class="word">爬山</span>
+            <span class="word">骑车</span><span class="word">打球</span><span class="word">跑步</span><span class="word">举重</span>
+            <span class="word">跳舞</span><span class="word">唱歌</span><span class="word">弹琴</span><span class="word">下棋</span>
+            <span class="word">放风筝</span><span class="word">打太极</span><span class="word">做瑜伽</span><span class="word">跳广场舞</span>
+            <span class="word">打方向盘</span><span class="word">拍合照</span><span class="word">搬箱子</span><span class="word">擦玻璃</span>
+          </div>
+        </div>
+        <div class="word-set card">
+          <h4>D 套 · 成语类</h4>
+          <p>适合第四队，难度略高，注意同音字判罚</p>
+          <div class="words">
+            <span class="word">画蛇添足</span><span class="word">守株待兔</span><span class="word">井底之蛙</span><span class="word">亡羊补牢</span>
+            <span class="word">掩耳盗铃</span><span class="word">刻舟求剑</span><span class="word">对牛弹琴</span><span class="word">狐假虎威</span>
+            <span class="word">拔苗助长</span><span class="word">自相矛盾</span><span class="word">滥竽充数</span><span class="word">叶公好龙</span>
+            <span class="word">杯弓蛇影</span><span class="word">望梅止渴</span><span class="word">一箭双雕</span><span class="word">三心二意</span>
+            <span class="word">手舞足蹈</span><span class="word">目瞪口呆</span><span class="word">抓耳挠腮</span><span class="word">捧腹大笑</span>
+          </div>
+        </div>
+      </div>
+      <p class="table-note">建议每套题里保留 3—4 个“容易比划”的词作为保底，避免某队 90 秒内一题都猜不出，现场气氛尴尬。</p>
+    </div>
+
+    <div class="card card-pad" style="margin-top:18px">
+      <h3 style="margin:0 0 6px;font-family:var(--serif);font-size:21px">签到与队伍点名表</h3>
+      <p class="small muted" style="margin:0 0 14px">可直接打印，按队填写。每队实到人数必须一致，否则接力项目按最少人数统一上场。</p>
+      <div class="table-wrap">
+        <table class="roster">
+          <thead><tr><th>队伍</th><th>队长</th><th>应到</th><th>实到</th><th>替补</th><th>确认签字</th></tr></thead>
+          <tbody>
+            <tr><td>赤焰之红队</td><td>温总</td><td>12</td><td></td><td></td><td></td></tr>
+            <tr><td>雷霆之绿队</td><td>刘骅总</td><td>12</td><td></td><td></td><td></td></tr>
+            <tr><td>沧溟之蓝队</td><td>陈保才总</td><td>12</td><td></td><td></td><td></td></tr>
+            <tr><td>绛霄之紫队</td><td></td><td>12</td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--red)"></i>赤焰之红</span>
+        <span><i style="background:var(--green)"></i>雷霆之绿</span>
+        <span><i style="background:var(--blue)"></i>沧溟之蓝</span>
+        <span><i style="background:var(--purple)"></i>绛霄之紫</span>
+        <span><i style="background:var(--gold)"></i>黄色为待确认项</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div><strong>2026年团建执行手册 · 你划我猜版</strong><br>根据原主持稿改编 · 版本 v1.0 · 2026-10-19</div>
+  <div>单文件 HTML，可离线打开；建议使用 Chrome / Edge 打印为 PDF。<br>黄色“待确认”项请在活动前统一补齐。</div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+const progressBar = document.getElementById('progressBar');
+const toTop = document.getElementById('toTop');
+const navLinks = Array.from(document.querySelectorAll('.nav a'));
+const sections = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+function updateScrollUI(){
+  const doc = document.documentElement;
+  const max = doc.scrollHeight - window.innerHeight;
+  const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+  progressBar.style.width = pct + '%';
+  toTop.classList.toggle('show', window.scrollY > 500);
+  let current = null;
+  for (const section of sections){
+    if (section.getBoundingClientRect().top <= 140) current = section.id;
+  }
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+}
+
+window.addEventListener('scroll', updateScrollUI, {passive:true});
+window.addEventListener('resize', updateScrollUI);
+toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+updateScrollUI();
+
+const scoreRows = Array.from(document.querySelectorAll('#scoreTable tbody tr'));
+const scoreKeys = ['stone', 'drum', 'paper', 'guess'];
+const lowerIsBetter = {stone:true, paper:true};
+
+function computeScores(){
+  const values = {};
+  scoreKeys.forEach(key => {
+    values[key] = scoreRows.map(row => {
+      const raw = row.querySelector('[data-key="' + key + '"]').value.trim();
+      return raw === '' ? null : Number(raw);
+    });
+  });
+  const points = scoreRows.map(() => 0);
+  const ranksByKey = {};
+  scoreKeys.forEach(key => {
+    const list = values[key];
+    const filled = list.filter(v => v !== null && !Number.isNaN(v));
+    if (filled.length < scoreRows.length) return;
+    const sorted = list.map((v, i) => ({v, i})).sort((a,b) => lowerIsBetter[key] ? a.v - b.v : b.v - a.v);
+    const ranks = new Array(scoreRows.length);
+    let previousValue = null;
+    let previousRank = 0;
+    sorted.forEach((item, position) => {
+      const rank = (previousValue !== null && item.v === previousValue) ? previousRank : position + 1;
+      ranks[item.i] = rank;
+      previousValue = item.v;
+      previousRank = rank;
+    });
+    ranksByKey[key] = ranks;
+    ranks.forEach((rank, i) => { points[i] += scoreRows.length - (rank - 1); });
+  });
+  const complete = scoreKeys.every(key => ranksByKey[key]);
+  const totals = scoreRows.map((row, i) => {
+    const badge = row.querySelector('.rank-badge');
+    const totalCell = row.querySelector('.score-total');
+    if (!complete){
+      badge.textContent = '—';
+      badge.classList.remove('first');
+      totalCell.textContent = '—';
+      return {row, i, total: null, guess: values.guess[i]};
+    }
+    return {row, i, total: points[i], guess: values.guess[i]};
+  });
+  if (complete){
+    const ranked = totals.slice().sort((a,b) => (b.total - a.total) || (b.guess - a.guess));
+    ranked.forEach((item, position) => {
+      item.row.querySelector('.rank-badge').textContent = position + 1;
+      item.row.querySelector('.rank-badge').classList.toggle('first', position === 0);
+      item.row.querySelector('.score-total').textContent = item.total + ' 分';
+    });
+  }
+}
+function resetScores(){
+  scoreRows.forEach(row => {
+    row.querySelectorAll('.score-input').forEach(input => { input.value = ''; });
+    row.querySelector('.rank-badge').textContent = '—';
+    row.querySelector('.rank-badge').classList.remove('first');
+    row.querySelector('.score-total').textContent = '—';
+  });
+}
+
+document.querySelectorAll('.score-input').forEach(input => input.addEventListener('input', computeScores));
+
+let timerSeconds = 90;
+let timerRemaining = 90;
+let timerId = null;
+let timerDone = false;
+const timerDisplay = document.getElementById('timerDisplay');
+const timerCard = document.getElementById('timerCard');
+const startBtn = document.getElementById('startBtn');
+
+function formatTime(seconds){
+  const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+  const s = Math.floor(seconds % 60).toString().padStart(2, '0');
+  return m + ':' + s;
+}
+
+function renderTimer(){
+  timerDisplay.textContent = formatTime(timerRemaining);
+  timerCard.classList.toggle('is-done', timerDone);
+}
+
+function stopTimer(){
+  if (timerId){ clearInterval(timerId); timerId = null; }
+  startBtn.textContent = '继续';
+}
+
+function toggleTimer(){
+  if (timerDone) resetTimer();
+  if (timerId){ stopTimer(); return; }
+  startBtn.textContent = '暂停';
+  timerId = setInterval(() => {
+    timerRemaining -= 1;
+    if (timerRemaining <= 0){
+      timerRemaining = 0;
+      timerDone = true;
+      clearInterval(timerId);
+      timerId = null;
+      startBtn.textContent = '重新开始';
+      renderTimer();
+      return;
+    }
+    renderTimer();
+  }, 1000);
+}
+
+function resetTimer(){
+  if (timerId){ clearInterval(timerId); timerId = null; }
+  timerRemaining = timerSeconds;
+  timerDone = false;
+  startBtn.textContent = '开始';
+  renderTimer();
+}
+
+function setTimer(seconds){
+  timerSeconds = seconds;
+  resetTimer();
+}
+
+renderTimer();
+</script>
+</body>
+</html>
